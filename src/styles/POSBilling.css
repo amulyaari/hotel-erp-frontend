@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f3f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pos-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header styling */
+.pos-header {
+  background: #111111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.brand { font-weight: bold; font-size: 1.1rem; }
+.sub-brand { color: #f2a900; font-size: 0.8rem; display: block; }
+.search-bar input {
+  width: 400px; padding: 8px 15px; border-radius: 4px; border: none;
+}
+.header-meta { font-size: 0.9rem; display: flex; gap: 15px; }
+
+/* Dashboard layout grid splitting */
+.pos-main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  background-color: #eef1f5;
+}
+
+/* Categories side column list */
+.pos-categories-sidebar {
+  width: 200px; background: #fff; padding: 15px; display: flex; flex-direction: column; gap: 10px; border-right: 1px solid #ddd;
+}
+.pos-categories-sidebar h3, .pos-products-section h3 {
+  font-size: 0.8rem; color: #555; margin-bottom: 5px; letter-spacing: 0.5px;
+}
+.category-btn {
+  padding: 12px; background: #fff; border: 1px solid #eee; border-radius: 6px; text-align: left; cursor: pointer; font-weight: 500;
+}
+.category-btn.active {
+  background: #111; color: #fff; border-color: #111;
+}
+.favorites-btn {
+  margin-top: auto; padding: 12px; background: #fff; border: 2px solid #f2a900; color: #111; font-weight: bold; border-radius: 6px; cursor: pointer;
+}
+
+/* Products item cards grid container */
+.pos-products-section {
+  flex: 1; padding: 15px; overflow-y: auto;
+}
+.products-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 10px;
+}
+.product-card {
+  background: #fff; border-radius: 6px; text-align: center; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); cursor: pointer;
+}
+.product-card img {
+  width: 100%; height: 100px; object-fit: cover; border-radius: 6px;
+}
+.product-card h4 { font-size: 0.9rem; margin: 8px 0 4px; color: #333; }
+.product-card p { font-weight: bold; color: #f2a900; }
+
+/* Right invoice breakdown calculation board */
+.pos-bill-panel {
+  width: 380px; background: #fff; border-left: 1px solid #ddd; padding: 15px; display: flex; flex-direction: column;
+}
+.bill-header p { font-size: 0.85rem; color: #666; margin-top: 4px; }
+.cart-table-header {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 0.2fr; font-size: 0.75rem; font-weight: bold; color: #777; margin-top: 15px; padding-bottom: 5px; border-bottom: 1px solid #eee;
+}
+.cart-items-list { flex: 1; overflow-y: auto; margin-top: 5px; }
+.cart-item-row {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 0.2fr; align-items: center; font-size: 0.85rem; padding: 10px 0; border-bottom: 1px solid #f9f9f9;
+}
+.qty-controls button { width: 20px; height: 20px; cursor: pointer; border: 1px solid #ccc; background: #fff; }
+.qty-controls span { margin: 0 5px; }
+.remove-btn { background: none; border: none; cursor: pointer; color: red; }
+
+/* Calculations sub-totals panel */
+.bill-summary { border-top: 2px dashed #ddd; padding-top: 10px; margin-top: 10px; }
+.summary-row { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; color: #444; }
+.summary-row.discount { color: red; }
+.summary-total { display: flex; justify-content: space-between; font-size: 1.4rem; font-weight: bold; color: #f2a900; margin: 10px 0; }
+
+/* Main action trigger layout buttons */
+.action-buttons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.hold-btn, .kot-btn {
+  padding: 10px; border-radius: 6px; border: 1px solid #ccc; background: #fff; cursor: pointer; font-weight: bold;
+}
+.payment-btn {
+  width: 100%; margin-top: 10px; padding: 15px; background: #f2a900; color: #fff; font-size: 1.1rem; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between;
+}
+.f-key { background: rgba(0,0,0,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
+
+/* Bottom hotkeys control footer menu bar */
+.pos-footer-menu {
+  background: #1e293b; padding: 10px; display: flex; gap: 10px; overflow-x: auto;
+}
+.pos-footer-menu button {
+  padding: 10px 15px; background: #334155; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.8rem; white-space: nowrap;
+}
+.pos-footer-menu button.clear-cart-btn { background: #ef4444; }
